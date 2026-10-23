@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" data-deck="adv-phys-09-rotation">
+<html lang="ko" data-deck="adv-phys-09-rotation-v2">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
@@ -9831,6 +9831,16 @@ table.compare.cmp th, table.compare.cmp td { padding: 6px 14px; }
 .sum ul { margin: 0; padding-left: 28px; }
 .sum li { margin: 0 0 14px; }
 
+
+/* 8 대표 물체의 회전 관성 */
+.shapes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 14px; margin-top: 4px; }
+.shp { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 4px; align-items: center; padding: 6px 6px; background: var(--paper); border-top: 4px solid var(--b); }
+.shp.hi { border-top-color: var(--a); }
+.shp svg { display: block; width: 130px; height: 120px; }
+.shp p { margin: 0 !important; }
+.shp .nm { font-size: 20px !important; line-height: 1.3 !important; font-weight: 700; }
+.shp .fx { font-size: 21px !important; margin-top: 4px !important; white-space: nowrap; }
+.shapes-note { margin: 10px 0 0 !important; font-size: 25px !important; }
 .chk p.q { font-size: 28px !important; }
 .chk .quiz .opt { font-size: 25px; }
 </style>
@@ -10024,6 +10034,51 @@ table.compare.cmp th, table.compare.cmp td { padding: 6px 14px; }
       <p class="step" style="margin-top:14px;font-size:25px">평행축 정리: $I = I_{cm} + Mh^2$ → $\frac{1}{12}ML^2 + M\left(\frac{L}{2}\right)^2 = \frac{1}{3}ML^2$</p>
     </div>
   </div>
+</section>
+
+<!-- 8 대표 물체의 회전 관성 -->
+<section class="slide" id="inertia-shapes" data-sec="2. 회전 관성과 돌림힘" data-title="대표 물체의 회전 관성">
+  <h2>모양과 회전축에 따라 회전 관성이 다르다</h2>
+  <div class="shapes" data-stagger="0.1">
+    <div class="shp hi">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="고리·얇은 원통 껍질"><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><ellipse class="dr-line" pathLength="1" style="--d:0.25s" cx="65" cy="36" rx="46" ry="14" fill="none" stroke="#0F6E6A" stroke-width="5"/><ellipse cx="65" cy="86" rx="46" ry="14" fill="none" stroke="#0F6E6A" stroke-width="3"/><line x1="19" y1="36" x2="19" y2="86" stroke="#0F6E6A" stroke-width="3"/><line x1="111" y1="36" x2="111" y2="86" stroke="#0F6E6A" stroke-width="3"/><text x="84" y="30" font-size="20">R</text></svg>
+      <div><p class="nm">(가) 고리·얇은 원통 껍질</p><p class="fx">$I = MR^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="두께가 있는 원통"><path d="M15 34 V82 A50 15 0 0 0 115 82 V34" fill="#D3ECE9" stroke="#1C1F24" stroke-width="2"/><ellipse class="dr-line" pathLength="1" style="--d:0.37s" cx="65" cy="34" rx="50" ry="15" fill="#D3ECE9" stroke="#1C1F24" stroke-width="3"/><ellipse cx="65" cy="34" rx="24" ry="7" fill="#FFFFFF" stroke="#1C1F24" stroke-width="2"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><text x="2" y="114" font-size="20">R₁, R₂</text></svg>
+      <div><p class="nm">(나) 두께가 있는 원통</p><p class="fx">$I = \tfrac{1}{2}M(R_1^2 + R_2^2)$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="원판·속이 찬 원통"><path d="M15 44 V76 A50 15 0 0 0 115 76 V44" fill="#D3ECE9" stroke="#1C1F24" stroke-width="2"/><ellipse class="dr-line" pathLength="1" style="--d:0.49s" cx="65" cy="44" rx="50" ry="15" fill="#D3ECE9" stroke="#1C1F24" stroke-width="3"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><text x="72" y="40" font-size="20">R</text></svg>
+      <div><p class="nm">(다) 원판·속이 찬 원통</p><p class="fx">$I = \tfrac{1}{2}MR^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="원통(길이에 수직인 축)"><rect x="14" y="44" width="96" height="32" fill="#D3ECE9" stroke="#1C1F24" stroke-width="2"/><ellipse class="dr-line" pathLength="1" style="--d:0.61s" cx="110" cy="60" rx="9" ry="16" fill="#D3ECE9" stroke="#1C1F24" stroke-width="3"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><text x="40" y="104" font-size="20">L</text><text x="112" y="36" font-size="20">R</text></svg>
+      <div><p class="nm">(라) 원통(길이에 수직인 축)</p><p class="fx">$I = \tfrac{1}{4}MR^2\!+\!\tfrac{1}{12}ML^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="가는 막대(중심 축)"><rect class="dr-line" pathLength="1" style="--d:0.73s" x="8" y="54" width="114" height="12" fill="#D3ECE9" stroke="#1C1F24" stroke-width="3"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><text x="20" y="96" font-size="20">L</text></svg>
+      <div><p class="nm">(마) 가는 막대(중심 축)</p><p class="fx">$I = \tfrac{1}{12}ML^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="속이 찬 공"><circle class="dr-line" pathLength="1" style="--d:0.85s" cx="65" cy="60" r="44" fill="#D3ECE9" stroke="#1C1F24" stroke-width="3"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><line x1="65" y1="60" x2="109" y2="60" stroke="#1C1F24" stroke-width="2"/><text x="82" y="54" font-size="20">R</text></svg>
+      <div><p class="nm">(바) 속이 찬 공</p><p class="fx">$I = \tfrac{2}{5}MR^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="공 껍질"><circle class="dr-line" pathLength="1" style="--d:0.97s" cx="65" cy="60" r="44" fill="none" stroke="#1C1F24" stroke-width="5"/><ellipse cx="65" cy="60" rx="44" ry="12" fill="none" stroke="#5F6670" stroke-width="2" stroke-dasharray="5 4"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><text x="82" y="44" font-size="20">R</text></svg>
+      <div><p class="nm">(사) 공 껍질</p><p class="fx">$I = \tfrac{2}{3}MR^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="고리(지름 축)"><circle class="dr-line" pathLength="1" style="--d:1.09s" cx="65" cy="60" r="44" fill="none" stroke="#1C1F24" stroke-width="5"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><line x1="65" y1="60" x2="109" y2="60" stroke="#1C1F24" stroke-width="2"/><text x="82" y="54" font-size="20">R</text></svg>
+      <div><p class="nm">(아) 고리(지름 축)</p><p class="fx">$I = \tfrac{1}{2}MR^2$</p></div>
+    </div>
+    <div class="shp">
+      <svg viewBox="0 0 130 120" width="130" height="120" aria-label="얇은 판(판에 수직인 중심 축)"><path class="dr-line" pathLength="1" style="--d:1.21s" d="M10 76 L44 44 L120 44 L86 76 Z" fill="#D3ECE9" stroke="#1C1F24" stroke-width="3"/><line x1="65" y1="4" x2="65" y2="116" stroke="#5F6670" stroke-width="2" stroke-dasharray="6 5"/><text x="38" y="100" font-size="20">a</text><text x="104" y="74" font-size="20">b</text></svg>
+      <div><p class="nm">(자) 얇은 판(판에 수직인 중심 축)</p><p class="fx">$I = \tfrac{1}{12}M(a^2 + b^2)$</p></div>
+    </div>
+  </div>
+  <p class="shapes-note step">같은 M, R이면 질량이 가장자리에 모인 고리(MR²)가 원판(½MR²)의 2배다.</p>
+  <p class="src">교과서 56쪽 그림 Ⅰ. 4-2를 바탕으로 직접 그림 · 모든 물체는 질량 분포가 균일하다</p>
 </section>
 
 <!-- 8 돌림힘 -->
@@ -10223,9 +10278,9 @@ table.compare.cmp th, table.compare.cmp td { padding: 6px 14px; }
   <div class="acts">
     <ol>
       <li><b class="no">1</b><span>생각 열기 · 4쪽 선수의 팔 동작</span></li>
-      <li><b class="no">2</b><span>자료 탐구 · 6쪽 회전판 기록, 10쪽 측정 기록 표</span></li>
-      <li><b class="no">3</b><span>비교 · 13쪽 병진 ↔ 회전 대응표</span></li>
-      <li class="now"><b class="no">4</b><span>적용 · 지금, 9쪽·12쪽을 다시 조작하며</span></li>
+      <li><b class="no">2</b><span>자료 탐구 · 6쪽 회전판 기록, 11쪽 측정 기록 표</span></li>
+      <li><b class="no">3</b><span>비교 · 14쪽 병진 ↔ 회전 대응표</span></li>
+      <li class="now"><b class="no">4</b><span>적용 · 지금, 10쪽·13쪽을 다시 조작하며</span></li>
       <li class="now"><b class="no">5</b><span>정리 · 지금, 키워드 빈칸과 한 줄 쓰기</span></li>
     </ol>
     <div class="timer" data-sec="480" data-label="활동지 4·5"></div>
@@ -10251,7 +10306,7 @@ table.compare.cmp th, table.compare.cmp td { padding: 6px 14px; }
         <text x="466" y="94" font-size="34" class="t-num" fill="#0F6E6A" font-weight="700"><tspan class="cu" data-to="5.9">5.9</tspan></text>
         <text x="466" y="174" font-size="30" class="t-num"><tspan class="cu" data-to="2.4">2.4</tspan></text>
         <text x="466" y="254" font-size="30" class="t-num"><tspan class="cu" data-to="1.2">1.2</tspan></text>
-        <text x="0" y="316" font-size="20" fill="#5F6670">10쪽 측정 기록 (예시 값) · 추가 축에서 멀수록 I가 커진다</text>
+        <text x="0" y="316" font-size="20" fill="#5F6670">11쪽 측정 기록 (예시 값) · 추가 축에서 멀수록 I가 커진다</text>
       </svg>
     </figure>
     <ul>
